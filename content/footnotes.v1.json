@@ -1,0 +1,42 @@
+[
+    {
+        "id": "footnote_audit_001",
+        "title": "The Paper Trail",
+        "summary": "How documentation became the primary measure of union legitimacy.",
+        "content": "In many labor systems, the bureaucratic requirements for union registration became more important than actual worker support. A union could exist legally with proper paperwork while representing few or no workers in practice. This created opportunities for 'paper unions' that served political purposes rather than worker interests.",
+        "era": "Post-Independence",
+        "date": "1945-1975"
+    },
+    {
+        "id": "footnote_strike_001",
+        "title": "Wildcat Strikes and Official Unions",
+        "summary": "When workers bypassed their own representatives.",
+        "content": "Wildcat strikes—work stoppages organized outside official union structures—often occurred when workers felt their unions had been captured by political interests. These spontaneous actions were typically met with hostility not only from employers but from the official labor federations themselves, who viewed them as threats to their negotiating position.",
+        "era": "Labor Period",
+        "date": "1950-1970"
+    },
+    {
+        "id": "footnote_media_001",
+        "title": "Counting Workers",
+        "summary": "The art of labor statistics.",
+        "content": "Membership numbers in labor federations were notoriously difficult to verify. Federations had incentives to inflate their numbers for political influence, while employers and governments had incentives to minimize them. The 'true' size of the labor movement remained a matter of interpretation.",
+        "era": "Political Era",
+        "date": "1960-1980"
+    },
+    {
+        "id": "footnote_audit_002",
+        "title": "The Investigation Pattern",
+        "summary": "When auditors came calling.",
+        "content": "Investigations into labor federation irregularities followed a predictable pattern: initial revelations, temporary scandal, negotiated settlements, and eventual return to normal operations. Few investigations resulted in fundamental reform, as the political connections of major federations provided protection.",
+        "era": "Modern Period",
+        "date": "1980-2000"
+    },
+    {
+        "id": "footnote_federation_001",
+        "title": "The Two-Delegate Rule",
+        "summary": "How representation became disconnected from membership.",
+        "content": "In certain labor electoral systems, each federation received a fixed number of delegates regardless of membership size. This created a perverse incentive: rather than growing membership in existing federations, it became more efficient to create multiple small federations. The result was a proliferation of 'shell' organizations that diluted authentic worker representation.",
+        "era": "System Design",
+        "date": "1946"
+    }
+]

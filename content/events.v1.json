@@ -1,0 +1,299 @@
+[
+  {
+    "id": "audit_routine_001",
+    "category": "audit",
+    "headline": "Ministry of Labor Requests Documentation",
+    "flavor": "A routine inspection has been scheduled. Your federation registry looks... optimistic.",
+    "image": "/assets/events/event_audit.png",
+    "weight": 10,
+    "choices": [
+      {
+        "id": "bribe",
+        "label": "Expedite the process",
+        "conditions": {
+          "patronageMin": 3
+        },
+        "effects": {
+          "patronage": -3,
+          "auditRisk": -15
+        },
+        "outcome": "The inspector finds your documentation exemplary. He leaves with a new watch."
+      },
+      {
+        "id": "stall",
+        "label": "Request an extension",
+        "effects": {
+          "auditRisk": 8,
+          "paperwork": 1
+        },
+        "outcome": "The inspection is postponed. Your file moves higher in the priority stack."
+      },
+      {
+        "id": "comply",
+        "label": "Provide full transparency",
+        "effects": {
+          "legitimacy": 5,
+          "auditRisk": 5
+        },
+        "outcome": "Auditors are satisfied but curious. They'll be back.",
+        "unlocks": [
+          "footnote_audit_001"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "political_patron_001",
+    "category": "political",
+    "headline": "A Generous Benefactor Appears",
+    "flavor": "A local notable has taken interest in your 'worker empowerment' initiatives. Their motives are unclear but their checkbook is not.",
+    "image": "/assets/events/event_political.png",
+    "weight": 8,
+    "choices": [
+      {
+        "id": "accept",
+        "label": "Accept their generous support",
+        "effects": {
+          "patronage": 4,
+          "legitimacy": -10,
+          "auditRisk": 3
+        },
+        "outcome": "The money flows. Worker representatives ask uncomfortable questions you're now too busy to answer."
+      },
+      {
+        "id": "decline",
+        "label": "Politely decline",
+        "effects": {
+          "legitimacy": 5
+        },
+        "outcome": "Your integrity is noted. Your budget remains constrained."
+      }
+    ]
+  },
+  {
+    "id": "labor_strike_001",
+    "category": "labor",
+    "headline": "Wildcat Strike in the Textile Sector",
+    "flavor": "Workers at a major factory have walked out. They claim their 'union' doesn't represent them. Technical difficulties.",
+    "image": "/assets/events/event_strike.png",
+    "weight": 7,
+    "conditions": {
+      "unionCountMin": 2
+    },
+    "choices": [
+      {
+        "id": "suppress",
+        "label": "Coordinate with management",
+        "effects": {
+          "streetHeat": 15,
+          "legitimacy": -15,
+          "patronage": 2
+        },
+        "outcome": "The strike is broken. Production resumes. Some workers are no longer employed.",
+        "unlocks": [
+          "footnote_strike_001"
+        ]
+      },
+      {
+        "id": "negotiate",
+        "label": "Send federation mediators",
+        "effects": {
+          "paperwork": -1,
+          "legitimacy": 5,
+          "streetHeat": -5
+        },
+        "outcome": "Grievances are logged and categorized. A committee will be formed."
+      },
+      {
+        "id": "ignore",
+        "label": "This is not your jurisdiction",
+        "effects": {
+          "streetHeat": 8
+        },
+        "outcome": "The strike continues. Momentum builds."
+      }
+    ]
+  },
+  {
+    "id": "economic_crisis_001",
+    "category": "economic",
+    "headline": "Currency Devaluation Impacts Operations",
+    "flavor": "The currency has lost 30% of its value overnight. Your operating costs have not adjusted accordingly.",
+    "image": "/assets/events/event_economic.png",
+    "weight": 6,
+    "choices": [
+      {
+        "id": "cut",
+        "label": "Implement efficiency measures",
+        "effects": {
+          "paperwork": -1,
+          "patronage": -2
+        },
+        "outcome": "Belts are tightened. Services are 'streamlined.' Workers notice."
+      },
+      {
+        "id": "seek_funding",
+        "label": "Request emergency patronage",
+        "conditions": {
+          "patronageMin": 1
+        },
+        "effects": {
+          "patronage": 3,
+          "legitimacy": -5
+        },
+        "outcome": "Benefactors step in. Their conditions are not written down."
+      }
+    ]
+  },
+  {
+    "id": "media_expose_001",
+    "category": "media",
+    "headline": "Journalists Investigate 'Paper Unions'",
+    "flavor": "A reporter is asking questions about federation membership numbers. Your math is creative.",
+    "image": "/assets/events/event_media.png",
+    "weight": 5,
+    "conditions": {
+      "federationCountMin": 1
+    },
+    "choices": [
+      {
+        "id": "stonewall",
+        "label": "No comment at this time",
+        "effects": {
+          "auditRisk": 5,
+          "streetHeat": 3
+        },
+        "outcome": "The story runs anyway. You are quoted as 'unavailable for comment.'"
+      },
+      {
+        "id": "spin",
+        "label": "Provide alternative metrics",
+        "conditions": {
+          "patronageMin": 2
+        },
+        "effects": {
+          "patronage": -2,
+          "legitimacy": -3
+        },
+        "outcome": "Your PR consultant earns their fee. The headline focuses on 'stakeholder diversity.'"
+      },
+      {
+        "id": "transparency",
+        "label": "Open the books",
+        "effects": {
+          "legitimacy": 10,
+          "auditRisk": 10
+        },
+        "outcome": "Your honesty is refreshing. Auditors are intrigued by what they find.",
+        "unlocks": [
+          "footnote_media_001"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "general_election_prep_001",
+    "category": "general",
+    "headline": "Election Commission Announces Timeline",
+    "flavor": "The labor election is approaching. Your delegate count is being scrutinized.",
+    "image": "/assets/events/event_election.png",
+    "weight": 10,
+    "conditions": {
+      "cycleMin": 3
+    },
+    "choices": [
+      {
+        "id": "mobilize",
+        "label": "Accelerate federation building",
+        "effects": {
+          "paperwork": 2,
+          "auditRisk": 5
+        },
+        "outcome": "New federations appear on the registry. Their offices remain undiscovered."
+      },
+      {
+        "id": "consolidate",
+        "label": "Focus on existing federations",
+        "effects": {
+          "legitimacy": 5
+        },
+        "outcome": "Quality over quantity. Auditors find less to question."
+      }
+    ]
+  },
+  {
+    "id": "audit_serious_001",
+    "category": "audit",
+    "headline": "Special Investigation Launched",
+    "flavor": "The Ministry has received 'credible reports' about irregularities. An independent auditor has been appointed.",
+    "weight": 4,
+    "conditions": {
+      "auditRiskMin": 40
+    },
+    "choices": [
+      {
+        "id": "obstruct",
+        "label": "Files are unfortunately unavailable",
+        "effects": {
+          "auditRisk": 20,
+          "legitimacy": -10
+        },
+        "outcome": "The investigation is delayed. The auditor's report will be comprehensive when it arrives."
+      },
+      {
+        "id": "cooperate",
+        "label": "Full cooperation protocol",
+        "effects": {
+          "auditRisk": -10,
+          "patronage": -3
+        },
+        "outcome": "Evidence is shared. Some federations are quietly dissolved. Others survive.",
+        "unlocks": [
+          "footnote_audit_002"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "political_rival_001",
+    "category": "political",
+    "headline": "Rival Federation Challenges Your Legitimacy",
+    "flavor": "A competing labor bloc claims your federations don't represent actual workers. They have documents.",
+    "weight": 6,
+    "conditions": {
+      "federationCountMin": 2
+    },
+    "choices": [
+      {
+        "id": "attack",
+        "label": "Question their funding sources",
+        "effects": {
+          "patronage": -1,
+          "streetHeat": 5
+        },
+        "outcome": "The discourse becomes mutual. Journalists are confused about who to trust."
+      },
+      {
+        "id": "merge",
+        "label": "Propose a strategic alliance",
+        "conditions": {
+          "patronageMin": 4
+        },
+        "effects": {
+          "patronage": -4,
+          "legitimacy": 10
+        },
+        "outcome": "Former rivals become partners. Workers are not consulted."
+      },
+      {
+        "id": "dismiss",
+        "label": "Our documentation speaks for itself",
+        "effects": {
+          "legitimacy": -5,
+          "auditRisk": 3
+        },
+        "outcome": "The challenge is noted in the official record."
+      }
+    ]
+  }
+]
