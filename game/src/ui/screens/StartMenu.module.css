@@ -1,0 +1,196 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.logo h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    margin: 0;
+    background: linear-gradient(135deg, #e0e0e0 0%, #808080 50%, #e0e0e0 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.tagline {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    margin: 1rem 0 0 0;
+    line-height: 1.6;
+}
+
+.description {
+    margin: 3rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.description p {
+    margin: 0 0 1rem 0;
+}
+
+.hint {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.startButton {
+    padding: 1.25rem 4rem;
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    border: none;
+    border-radius: 12px;
+    color: #0f0f1a;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.startButton:hover {
+    transform: scale(1.05);
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px rgba(74, 222, 128, 0.4);
+}
+
+.tipsButton {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    margin-top: -1rem;
+    /* Visual grouping */
+}
+
+.tipsButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.seedInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.seedInput label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.seedInput input {
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 0.875rem;
+    width: 280px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.seedInput input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.seedInput input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.footer {
+    margin-top: 4rem;
+}
+
+.footer p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0;
+}
+
+/* Loading & Error States */
+.loading,
+.error {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #4ade80;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error h2 {
+    color: #f87171;
+    margin: 0 0 1rem 0;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/start_menu_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 600px;
+}

@@ -1,0 +1,260 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    margin: 0;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0.5rem 0 2rem 0;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.statValue {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e0e0e0;
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.progressContainer {
+    margin-bottom: 2rem;
+}
+
+.progressBar {
+    height: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 1s ease-out;
+}
+
+.progressFill.winning {
+    background: linear-gradient(90deg, #4ade80 0%, #22c55e 100%);
+}
+
+.progressFill.losing {
+    background: linear-gradient(90deg, #f87171 0%, #ef4444 100%);
+}
+
+.threshold {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: white;
+    transform: translateX(-50%);
+}
+
+.progressLabels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.progressLabels .winning {
+    color: #4ade80;
+    font-weight: 600;
+}
+
+.progressLabels .losing {
+    color: #f87171;
+    font-weight: 600;
+}
+
+.prediction {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.resolveButton {
+    padding: 1rem 3rem;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border: none;
+    border-radius: 8px;
+    color: #0f0f1a;
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.resolveButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(251, 191, 36, 0.4);
+}
+
+.resolveButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.resolveButton.revealing {
+    animation: pulse 0.5s ease-in-out infinite;
+}
+
+/* Federation Results */
+.federationResults {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.federationRoll {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fedName {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    flex: 1;
+    text-align: left;
+}
+
+.delegateRolls {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 1rem;
+}
+
+.delegateIcon {
+    font-size: 1.25rem;
+    transition: transform 0.2s ease;
+}
+
+.delegateIcon.secured {
+    animation: bounceIn 0.5s ease;
+}
+
+.delegateIcon.lost {
+    filter: grayscale(50%);
+    opacity: 0.7;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.rollResult {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Secured card emphasis */
+.securedCard {
+    border-color: rgba(251, 191, 36, 0.3);
+    background: rgba(251, 191, 36, 0.1);
+}
+
+/* Expected progress (faded background) */
+.progressExpected {
+    position: absolute;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+}
+
+.progressFill {
+    position: absolute;
+    height: 100%;
+    border-radius: 8px;
+    transition: width 1s ease-out;
+}
+
+/* Reliability note */
+.reliabilityNote {
+    font-size: 0.9rem;
+    color: rgba(251, 191, 36, 0.9);
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(251, 191, 36, 0.2);
+}
