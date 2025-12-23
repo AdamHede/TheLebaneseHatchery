@@ -34,6 +34,13 @@ export function EventModal() {
         return `${icons[key] || ''} ${sign}${value}`;
     };
 
+    const resolveAssetPath = (path: string) => {
+        if (!path || path.startsWith('http')) return path;
+        const baseUrl = import.meta.env.BASE_URL;
+        const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+        return `${baseUrl}${cleanPath}`;
+    };
+
     return (
         <div className={styles.overlay}>
             <div className={styles.modal}>
@@ -42,7 +49,7 @@ export function EventModal() {
                 {event.image && (
                     <div className={styles.imageContainer}>
                         <img
-                            src={event.image}
+                            src={resolveAssetPath(event.image)}
                             alt={event.headline}
                             className={styles.eventImage}
                         />

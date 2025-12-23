@@ -21,10 +21,11 @@ async function loadJson<T>(path: string): Promise<T> {
  * Load and validate all game content
  */
 export async function loadContent(): Promise<ContentBundle> {
+    const baseUrl = import.meta.env.BASE_URL;
     const [eventsRaw, footnotesRaw, namePartsRaw] = await Promise.all([
-        loadJson('/content/events.v1.json'),
-        loadJson('/content/footnotes.v1.json'),
-        loadJson('/content/nameParts.v1.json'),
+        loadJson(`${baseUrl}content/events.v1.json`),
+        loadJson(`${baseUrl}content/footnotes.v1.json`),
+        loadJson(`${baseUrl}content/nameParts.v1.json`),
     ]);
 
     // Validate with Zod
